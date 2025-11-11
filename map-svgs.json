@@ -135,13 +135,10 @@
       "name": "Libya",
       "lat": 28.707986,
       "lon": 15.182874,
-      "svgUrl": "https://theoramond.github.io/map-routes/warning-red.svg",
+      "svgUrl": "https://theoramond.github.io/map-routes/warning-orange.svg",
       "size": 40,
       "glow": true,
       "glowColor": "#f0b100"
     }
   ]
 }
-
-
-
