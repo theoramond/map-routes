@@ -1,0 +1,13 @@
+{
+  "svgs": [
+    {
+      "id": "eu-commission",
+      "name": "EU Commission",
+      "lat": 50.843700,
+      "lon": 4.382661,
+      "svgUrl": "https://theoramond.github.io/map-icons/power-grid.svg",
+      "size": 60,
+      "anchor": "bottom"
+    }
+  ]
+}
