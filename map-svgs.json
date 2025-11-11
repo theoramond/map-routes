@@ -9,6 +9,16 @@
       "size": 40,
       "glow": true,
       "glowColor": "#00c8ff"
+    },
+    {
+      "id": "shield-check1",
+      "name": "Shield",
+      "lat": 53.042524,
+      "lon": 23.910641,
+      "svgUrl": "https://theoramond.github.io/map-routes/shield-check.svg",
+      "size": 20,
+      "glow": false,
+      "glowColor": "#000000"
     }
   ]
 }
