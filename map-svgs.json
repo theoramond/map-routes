@@ -8,7 +8,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/eu-commission.svg",
       "size": 40,
       "glow": true,
-      "glowColor": "#00c8ff"
+      "glowColor": "#00c8ff",
+      "pulse": false
     },
     {
       "id": "shield-check1",
@@ -18,7 +19,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/shield-check.svg",
       "size": 20,
       "glow": false,
-      "glowColor": "#000000"
+      "glowColor": "#000000",
+      "pulse": false
     },
     {
       "id": "shield-cross",
@@ -28,7 +30,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
       "glow": false,
-      "glowColor": "#000000"
+      "glowColor": "#000000",
+      "pulse": false
     },
     {
       "id": "shield-cross",
@@ -38,7 +41,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
       "glow": false,
-      "glowColor": "#000000"
+      "glowColor": "#000000",
+      "pulse": false
     },
     {
       "id": "shield-cross",
@@ -48,7 +52,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
       "glow": false,
-      "glowColor": "#000000"
+      "glowColor": "#000000",
+      "pulse": false
     },
     {
       "id": "shield-cross",
@@ -58,7 +63,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
       "glow": false,
-      "glowColor": "#000000"
+      "glowColor": "#000000",
+      "pulse": false
     },
     {
       "id": "shield-cross",
@@ -68,7 +74,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
       "glow": false,
-      "glowColor": "#000000"
+      "glowColor": "#000000",
+      "pulse": false
     },
     {
       "id": "shield-cross",
@@ -78,7 +85,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
       "glow": false,
-      "glowColor": "#000000"
+      "glowColor": "#000000",
+      "pulse": false
     },
     {
       "id": "shield-cross",
@@ -88,7 +96,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
       "glow": false,
-      "glowColor": "#000000"
+      "glowColor": "#000000",
+      "pulse": false
     },
     {
       "id": "shield-cross",
@@ -98,7 +107,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
       "glow": false,
-      "glowColor": "#000000"
+      "glowColor": "#000000",
+      "pulse": false
     },
     {
       "id": "shield-cross",
@@ -108,7 +118,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
       "glow": false,
-      "glowColor": "#000000"
+      "glowColor": "#000000",
+      "pulse": false
     },
     {
       "id": "shield-check2",
@@ -118,7 +129,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/shield-check.svg",
       "size": 20,
       "glow": false,
-      "glowColor": "#000000"
+      "glowColor": "#000000",
+      "pulse": false
     },
     {
       "id": "Algeria",
@@ -128,7 +140,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/warning-red.svg",
       "size": 30,
       "glow": true,
-      "glowColor": "#e20f00"
+      "glowColor": "#e20f00",
+      "pulse": true
     },
     {
       "id": "Libya",
@@ -138,7 +151,8 @@
       "svgUrl": "https://theoramond.github.io/map-routes/warning-orange.svg",
       "size": 30,
       "glow": true,
-      "glowColor": "#f0b100"
+      "glowColor": "#f0b100",
+      "pulse": false
     }
   ]
 }
