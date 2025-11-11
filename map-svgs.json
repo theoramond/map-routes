@@ -119,6 +119,29 @@
       "size": 20,
       "glow": false,
       "glowColor": "#000000"
+    },
+    {
+      "id": "Algeria",
+      "name": "Algeria",
+      "lat": 28.081248,
+      "lon": 3.967334,
+      "svgUrl": "https://theoramond.github.io/map-routes/warning-red.svg",
+      "size": 40,
+      "glow": true,
+      "glowColor": "#e20f00"
+    },
+    {
+      "id": "Libya",
+      "name": "Libya",
+      "lat": 28.707986,
+      "lon": 15.182874,
+      "svgUrl": "https://theoramond.github.io/map-routes/warning-red.svg",
+      "size": 40,
+      "glow": true,
+      "glowColor": "#f0b100"
     }
   ]
 }
+
+
+
