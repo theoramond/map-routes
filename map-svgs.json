@@ -12,6 +12,17 @@
       "pulse": false
     },
     {
+      "id": "oceanviking",
+      "name": "Ocean Viking",
+      "lat": 37.23255,
+      "lon": 15.20596,
+      "svgUrl": "https://theoramond.github.io/map-routes/boat.svg",
+      "size": 40,
+      "glow": false,
+      "glowColor": "#00c8ff",
+      "pulse": false
+    },
+    {
       "id": "shield-check1",
       "name": "Shield",
       "lat": 53.042524,
