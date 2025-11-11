@@ -19,6 +19,16 @@
       "size": 20,
       "glow": false,
       "glowColor": "#000000"
+    },
+    {
+      "id": "shield-cross",
+      "name": "Shield",
+      "lat": 35.95252488409381,
+      "lon": -5.566984249312373,
+      "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
+      "size": 20,
+      "glow": false,
+      "glowColor": "#000000"
     }
   ]
 }
