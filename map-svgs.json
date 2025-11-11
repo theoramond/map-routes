@@ -29,6 +29,96 @@
       "size": 20,
       "glow": false,
       "glowColor": "#000000"
+    },
+    {
+      "id": "shield-cross",
+      "name": "Shield",
+      "lat": 36.990611167627584,
+      "lon": 12.074657517678228,
+      "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
+      "size": 20,
+      "glow": false,
+      "glowColor": "#000000"
+    },
+    {
+      "id": "shield-cross",
+      "name": "Shield",
+      "lat": 33.63814019563836,
+      "lon": 24.19360987672808,
+      "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
+      "size": 20,
+      "glow": false,
+      "glowColor": "#000000"
+    },
+    {
+      "id": "shield-cross",
+      "name": "Shield",
+      "lat": 45.601651807010846,
+      "lon": 18.91137162892024,
+      "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
+      "size": 20,
+      "glow": false,
+      "glowColor": "#000000"
+    },
+    {
+      "id": "shield-cross",
+      "name": "Shield",
+      "lat": 40.983526766852414,
+      "lon": 26.329320003850064,
+      "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
+      "size": 20,
+      "glow": false,
+      "glowColor": "#000000"
+    },
+    {
+      "id": "shield-cross",
+      "name": "Shield",
+      "lat": 39.12217952817634,
+      "lon": 26.29897910392068,
+      "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
+      "size": 20,
+      "glow": false,
+      "glowColor": "#000000"
+    },
+    {
+      "id": "shield-cross",
+      "name": "Shield",
+      "lat": 34.8856309980181,
+      "lon": 33.01999739198759,
+      "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
+      "size": 20,
+      "glow": false,
+      "glowColor": "#000000"
+    },
+    {
+      "id": "shield-cross",
+      "name": "Shield",
+      "lat": 27.970603115981252,
+      "lon": -15.46245846010654,
+      "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
+      "size": 20,
+      "glow": false,
+      "glowColor": "#000000"
+    },
+    {
+      "id": "shield-cross",
+      "name": "Shield",
+      "lat": -12.731979425807086,
+      "lon": 45.08464261230838,
+      "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
+      "size": 20,
+      "glow": false,
+      "glowColor": "#000000"
+    },
+    {
+      "id": "shield-check2",
+      "name": "Shield",
+      "lat": 62.65540117355901,
+      "lon": 31.375622560537636,
+      "svgUrl": "https://theoramond.github.io/map-routes/shield-check.svg",
+      "size": 20,
+      "glow": false,
+      "glowColor": "#000000"
     }
   ]
 }
