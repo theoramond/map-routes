@@ -79,7 +79,7 @@
     },
     {
       "id": "cyprus-cyprus",
-      "countries": ["CYP", null],
+      "countries": ["CYP"],
       "lat": 34.8856309980181,
       "lon": 33.01999739198759,
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
