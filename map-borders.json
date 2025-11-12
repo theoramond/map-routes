@@ -66,7 +66,7 @@
       "width": 2,
       "landOnly": false
     },
-      {
+    {
       "id": "turkey-greece2",
       "countries": ["TUR", "GRC"],
       "lat": 39.12217952817634,
@@ -77,7 +77,7 @@
       "width": 2,
       "landOnly": false
     },
-          {
+    {
       "id": "cyprus-cyprus",
       "countries": ["CYP", "CYP"],
       "lat": 34.8856309980181,
@@ -87,7 +87,7 @@
       "color": "#00ffff",
       "width": 2,
       "landOnly": false
-    },
+    }
   ]
 }
 
