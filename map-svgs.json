@@ -23,28 +23,6 @@
       "pulse": false
     },
     {
-      "id": "shield-check1",
-      "name": "Shield",
-      "lat": 53.042524,
-      "lon": 23.910641,
-      "svgUrl": "https://theoramond.github.io/map-routes/shield-check.svg",
-      "size": 20,
-      "glow": false,
-      "glowColor": "#000000",
-      "pulse": false
-    },
-    {
-      "id": "shield-cross",
-      "name": "Shield",
-      "lat": 35.95252488409381,
-      "lon": -5.566984249312373,
-      "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
-      "size": 20,
-      "glow": false,
-      "glowColor": "#000000",
-      "pulse": false
-    },
-    {
       "id": "shield-cross",
       "name": "Shield",
       "lat": 36.990611167627584,
