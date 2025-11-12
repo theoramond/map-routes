@@ -9,10 +9,10 @@
       "size": 20,
       "color": "#ffffff",
       "width": 2,
-      "landOnly": ,
+      "landOnly": true
     },
     {
-      "id": "italy-tunisian",
+      "id": "italy-tunisia",
       "countries": ["ITA", "TUN"],
       "lat": 35.95252488409381,
       "lon": -5.566984249312373,
