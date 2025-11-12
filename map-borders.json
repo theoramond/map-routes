@@ -1,0 +1,25 @@
+{
+  "borders": [
+    {
+      "id": "poland-belarus",
+      "countries": ["POL", "BLR"],
+      "lat": 53.042524,
+      "lon": 23.910641,
+      "svgUrl": "https://theoramond.github.io/map-routes/shield-check.svg",
+      "size": 20,
+      "color": "#ffffff",
+      "width": 2
+    },
+    {
+      "id": "ukraine-hungary",
+      "countries": ["UKR", "HUN"],
+      "lat": 35.95252488409381,
+      "lon": -5.566984249312373,
+      "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
+      "size": 20,
+      "color": "#00ffff",
+      "width": 2
+    }
+  ]
+}
+
