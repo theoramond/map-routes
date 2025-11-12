@@ -1,7 +1,7 @@
 {
   "borders": [
     {
-      "id": "poland-belarus",
+      "id": "po"land"-belarus",
       "countries": ["POL", "BLR"],
       "lat": 53.042524,
       "lon": 23.910641,
@@ -9,7 +9,7 @@
       "size": 20,
       "color": "#ffffff",
       "width": 2,
-      "landOnly": true
+      "type": "land"
     },
     {
       "id": "spain-morocco",
@@ -20,7 +20,7 @@
       "size": 20,
       "color": "#00ffff",
       "width": 2,
-      "landOnly": false
+      "type": "all"
     },
     {
       "id": "italy-tunisia",
@@ -31,7 +31,7 @@
       "size": 20,
       "color": "#00ffff",
       "width": 2,
-      "landOnly": false
+      "type": "all"
     },
     {
       "id": "libya-greece",
@@ -42,7 +42,7 @@
       "size": 20,
       "color": "#00ffff",
       "width": 2,
-      "landOnly": false
+      "type": "all"
     },
     {
       "id": "serbia-croatia",
@@ -53,7 +53,7 @@
       "size": 20,
       "color": "#00ffff",
       "width": 2,
-      "landOnly": false
+      "type": "all"
     },
     {
       "id": "turkey-greece",
@@ -64,7 +64,7 @@
       "size": 20,
       "color": "#00ffff",
       "width": 2,
-      "landOnly": false
+      "type": "land"
     },
     {
       "id": "turkey-greece2",
@@ -75,7 +75,7 @@
       "size": 20,
       "color": "#00ffff",
       "width": 2,
-      "landOnly": false
+      "type": "sea"
     },
     {
       "id": "cyprus-cyprus",
@@ -86,7 +86,7 @@
       "size": 20,
       "color": "#00ffff",
       "width": 2,
-      "landOnly": false
+      "type": "all"
     }
   ]
 }
