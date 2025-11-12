@@ -23,6 +23,17 @@
       "pulse": false
     },
     {
+      "id": "frontex",
+      "name": "Frontex Mission",
+      "lat": 35.49691534756277, 
+      "lon": 12.604577315429923,
+      "svgUrl": "https://theoramond.github.io/map-routes/frontex.svg",
+      "size": 20,
+      "glow": false,
+      "glowColor": "#00c8ff",
+      "pulse": false
+    },
+    {
       "id": "shield-cross",
       "name": "Shield",
       "lat": 27.970603115981252,
