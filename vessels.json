@@ -1,0 +1,134 @@
+[
+  {
+  "name": "Ocean Viking",
+  "organization": "SOS Méditerranée",
+  "country": "Norway",
+  "callsign": "LITA7",
+  "type": "Offshore supply / SAR vessel",
+  "notes": "Large NGO-operated rescue ship active in the central Mediterranean.",
+  "svg": "",
+  "lat": "",
+  "lon": ""
+  },
+  {
+  "name": "Humanity 1",
+  "organization": "SOS Humanity",
+  "country": "Germany",
+  "callsign": "DEMS",
+  "type": "Rescue vessel",
+  "notes": "German-flagged ship carrying out humanitarian SAR missions off Libya and Italy.",
+  "svg": "",
+  "lat": "",
+  "lon": ""
+  },
+  {
+  "name": "Life Support",
+  "organization": "Emergency NGO",
+  "country": "Italy",
+  "callsign": "IBXZ",
+  "type": "Rescue/supply vessel",
+  "notes": "Operates from Italian ports, used in central Mediterranean rescue operations.",
+  "svg": "",
+  "lat": "",
+  "lon": ""
+  },
+  {
+  "name": "Geo Barents",
+  "organization": "Médecins Sans Frontières (MSF)",
+  "country": "Norway",
+  "callsign": "LARU7",
+  "type": "Rescue/hospital vessel",
+  "notes": "MSF humanitarian rescue ship, temporarily paused operations in late 2024.",
+  "svg": "",
+  "lat": "",
+  "lon": ""
+  },
+  {
+  "name": "Sea-Watch 5",
+  "organization": "Sea-Watch",
+  "country": "Germany",
+  "callsign": "DJUR",
+  "type": "Rescue vessel",
+  "notes": "German NGO rescue vessel replacing earlier Sea-Watch ships, active 2025.",
+  "svg": "",
+  "lat": "",
+  "lon": ""
+  },
+  {
+  "name": "ResQ People",
+  "organization": "RESQ People",
+  "country": "Italy",
+  "callsign": "IBUM",
+  "type": "Rescue vessel",
+  "notes": "Operates in central Mediterranean; Italian NGO SAR missions from Sicily.",
+  "svg": "",
+  "lat": "",
+  "lon": ""
+  },
+  {
+  "name": "Mare Jonio",
+  "organization": "Mediterranea Saving Humans",
+  "country": "Italy",
+  "callsign": "IBTA",
+  "type": "Support/rescue vessel",
+  "notes": "Italian-flagged activist rescue vessel in the Mediterranean.",
+  "svg": "",
+  "lat": "",
+  "lon": ""
+  },
+  {
+  "name": "Louise Michel",
+  "organization": "Mediterranea / Banksy-funded",
+  "country": "Germany",
+  "callsign": "DG8632",
+  "type": "Fast patrol / SAR vessel",
+  "notes": "Small, fast pink rescue boat funded by artist Banksy, operates in central Med.",
+  "svg": "",
+  "lat": "",
+  "lon": ""
+  },
+  {
+  "name": "Nadir",
+  "organization": "RESQSHIP",
+  "country": "Germany",
+  "callsign": "DEBA",
+  "type": "Sailing rescue support vessel",
+  "notes": "Small reconnaissance and support vessel used for spotting and assistance.",
+  "svg": "",
+  "lat": "",
+  "lon": ""
+  },
+  {
+  "name": "Sea-Eye 4",
+  "organization": "Sea-Eye",
+  "country": "Germany",
+  "callsign": "DBAJ",
+  "type": "Rescue vessel",
+  "notes": "Converted research vessel used by German NGO Sea-Eye for SAR operations.",
+  "svg": "",
+  "lat": "",
+  "lon": ""
+  },
+  {
+  "name": "Astral",
+  "organization": "Proactiva Open Arms",
+  "country": "Spain",
+  "callsign": "ECIN",
+  "type": "Sailing/awareness vessel",
+  "notes": "Used for rescues and awareness missions in the Western Med and Channel.",
+  "svg": "",
+  "lat": "",
+  "lon": ""
+  },
+  {
+  "name": "Open Arms Uno",
+  "organization": "Proactiva Open Arms",
+  "country": "Spain",
+  "callsign": "ECOV",
+  "type": "Rescue vessel",
+  "notes": "Large SAR ship operated by Spanish NGO Open Arms.",
+  "svg": "",
+  "lat": "",
+  "lon": ""
+  }
+]
