@@ -1,7 +1,7 @@
 {
   "borders": [
     {
-      "id": "po"land"-belarus",
+      "id": "poland-belarus",
       "countries": ["POL", "BLR"],
       "lat": 53.042524,
       "lon": 23.910641,
@@ -18,7 +18,7 @@
       "lon": -5.566984249312373,
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
-      "color": "#00ffff",
+      "color": "#ffffff",
       "width": 2,
       "type": "all"
     },
@@ -29,7 +29,7 @@
       "lon": 12.074657517678228,
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
-      "color": "#00ffff",
+      "color": "#ffffff",
       "width": 2,
       "type": "all"
     },
@@ -40,7 +40,7 @@
       "lon": 24.19360987672808,
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
-      "color": "#00ffff",
+      "color": "#ffffff",
       "width": 2,
       "type": "all"
     },
@@ -51,7 +51,7 @@
       "lon": 18.91137162892024,
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
-      "color": "#00ffff",
+      "color": "#ffffff",
       "width": 2,
       "type": "all"
     },
@@ -62,7 +62,7 @@
       "lon": 26.329320003850064,
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
-      "color": "#00ffff",
+      "color": "#ffffff",
       "width": 2,
       "type": "land"
     },
@@ -73,7 +73,7 @@
       "lon": 26.29897910392068,
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
-      "color": "#00ffff",
+      "color": "#ffffff",
       "width": 2,
       "type": "sea"
     },
@@ -84,7 +84,7 @@
       "lon": 33.01999739198759,
       "svgUrl": "https://theoramond.github.io/map-routes/shield-cross.svg",
       "size": 20,
-      "color": "#00ffff",
+      "color": "#ffffff",
       "width": 2,
       "type": "all"
     }
