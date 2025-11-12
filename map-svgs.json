@@ -17,7 +17,7 @@
       "lat": 37.23255,
       "lon": 15.20596,
       "svgUrl": "https://theoramond.github.io/map-routes/boat.svg",
-      "size": 40,
+      "size": 20,
       "glow": false,
       "glowColor": "#00c8ff",
       "pulse": false
