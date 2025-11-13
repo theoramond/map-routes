@@ -8,8 +8,8 @@
 		"callsign": "JXIW3",
 		"type": "Offshore supply / SAR vessel",
 		"notes": "Large NGO-operated rescue ship active in the central Mediterranean.",
-		"lat": 37.23255,
-		"lon": 15.20596,
+		"lat": "",
+		"lon": "",
 		"svgUrl": "https://theoramond.github.io/map-routes/boat.svg",
 		"size": 20
 	},
