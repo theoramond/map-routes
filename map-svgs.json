@@ -18,7 +18,7 @@
       "lon": 12.604577315429923,
       "svgUrl": "https://theoramond.github.io/map-routes/frontex.svg",
       "size": 20,
-      "glow": false,
+      "glow": true,
       "glowColor": "#00c8ff",
       "pulse": false
     },
