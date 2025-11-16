@@ -1,5 +1,17 @@
 {
-"Route 1": "https://theoramond.github.io/map-routes/route1.json",
-"Route 2": "https://theoramond.github.io/map-routes/route2.json",
-"Route 3": "https://theoramond.github.io/map-routes/route3.json"  
+  "Route 1": {
+    "url": "https://theoramond.github.io/map-routes/route1.json",
+    "coreColor": "#ff0000",
+    "glowColor": "#510b06"
+  },
+  "Route 2": {
+    "url": "https://theoramond.github.io/map-routes/route2.json",
+    "coreColor": "#0088ff",
+    "glowColor": "#0048a3"
+  },
+  "Route 3": {
+    "url": "https://theoramond.github.io/map-routes/route3.json",
+    "coreColor": "#00ff88",
+    "glowColor": "#008852"
+  }
 }
