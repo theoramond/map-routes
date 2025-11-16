@@ -3,30 +3,30 @@
     "url": "https://theoramond.github.io/map-routes/route1.json",
     "coreColor": "#ff0000",
     "glowColor": "#510b06",
-    "name:" "Morocco-Spain"
+    "name": "Morocco-Spain"
   },
   "Route 2": {
     "url": "https://theoramond.github.io/map-routes/route2.json",
     "coreColor": "#ff0000",
     "glowColor": "#510b06",
-    "name:" "Turkey-Greece"
+    "name": "Turkey-Greece"
   },
   "Route 3": {
     "url": "https://theoramond.github.io/map-routes/route3.json",
     "coreColor": "#ff0000",
     "glowColor": "#510b06",
-    "name:" "Tunisia-Italy"
+    "name": "Tunisia-Italy"
   },
   "Route 4": {
     "url": "https://theoramond.github.io/map-routes/route4.json",
     "coreColor": "#ff0000",
     "glowColor": "#510b06",
-    "name:" "Libya-Italy"
+    "name": "Libya-Italy"
   },
   "Route 5": {
     "url": "https://theoramond.github.io/map-routes/route5.json",
     "coreColor": "#ff0000",
     "glowColor": "#510b06",
-    "name:" "Libya-Greece"
+    "name": "Libya-Greece"
   }
 }
