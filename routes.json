@@ -13,5 +13,10 @@
     "url": "https://theoramond.github.io/map-routes/route3.json",
     "coreColor": "#00ff88",
     "glowColor": "#008852"
+  },
+  "Route 4": {
+    "url": "https://theoramond.github.io/map-routes/route4.json",
+    "coreColor": "#ff0000",
+    "glowColor": "#510b06"
   }
 }
