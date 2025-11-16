@@ -2,31 +2,31 @@
   "Route 1": {
     "url": "https://theoramond.github.io/map-routes/route1.json",
     "coreColor": "#ff0000",
-    "glowColor": "#510b06"
+    "glowColor": "#510b06",
+    "name:" "Morocco-Spain"
   },
   "Route 2": {
     "url": "https://theoramond.github.io/map-routes/route2.json",
-    "coreColor": "#0088ff",
-    "glowColor": "#0048a3"
+    "coreColor": "#ff0000",
+    "glowColor": "#510b06",
+    "name:" "Turkey-Greece"
   },
   "Route 3": {
     "url": "https://theoramond.github.io/map-routes/route3.json",
-    "coreColor": "#00ff88",
-    "glowColor": "#008852"
+    "coreColor": "#ff0000",
+    "glowColor": "#510b06",
+    "name:" "Tunisia-Italy"
   },
   "Route 4": {
     "url": "https://theoramond.github.io/map-routes/route4.json",
     "coreColor": "#ff0000",
-    "glowColor": "#510b06"
+    "glowColor": "#510b06",
+    "name:" "Libya-Italy"
   },
   "Route 5": {
     "url": "https://theoramond.github.io/map-routes/route5.json",
     "coreColor": "#ff0000",
-    "glowColor": "#510b06"
-  },
-  "Route 6": {
-    "url": "https://theoramond.github.io/map-routes/route6.json",
-    "coreColor": "#ff0000",
-    "glowColor": "#510b06"
+    "glowColor": "#510b06",
+    "name:" "Libya-Greece"
   }
 }
