@@ -95,12 +95,19 @@
   .link-more:hover { border-color: #aaa; transform: translateY(-1px); }
   .uc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
   .uc-card { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 3/4; background: #c8d0d8; }
+  .uc-card:nth-child(1) .uc-photo { background: url('uc-1.jpg') center/cover no-repeat; }
+  .uc-card:nth-child(2) .uc-photo { background: url('uc-2.jpg') center/cover no-repeat; }
+  .uc-card:nth-child(3) .uc-photo { background: url('uc-3.jpg') center/cover no-repeat; }
+ .uc-card:nth-child(4) .uc-photo { background: url('uc-4.jpg') center/cover no-repeat; }
+ .uc-card:nth-child(5) .uc-photo { background: url('uc-5.jpg') center/cover no-repeat; }
+ .uc-card:nth-child(6) .uc-photo { background: url('uc-6.jpg') center/cover no-repeat; }
+/*
   .uc-card:nth-child(1) .uc-photo { background: linear-gradient(160deg, #7a8fa0 0%, #4a5f72 50%, #2d3f50 100%); }
   .uc-card:nth-child(2) .uc-photo { background: linear-gradient(160deg, #8a7a6a 0%, #5e4e40 50%, #3a2e25 100%); }
   .uc-card:nth-child(3) .uc-photo { background: linear-gradient(160deg, #6a8a7a 0%, #4a6a5a 50%, #2a4a3a 100%); }
   .uc-card:nth-child(4) .uc-photo { background: linear-gradient(160deg, #7a6a8a 0%, #5a4a6a 50%, #3a2a4a 100%); }
   .uc-card:nth-child(5) .uc-photo { background: linear-gradient(160deg, #8a8a6a 0%, #6a6a4a 50%, #4a4a2a 100%); }
-  .uc-card:nth-child(6) .uc-photo { background: linear-gradient(160deg, #7a8a8a 0%, #506070 50%, #304050 100%); }
+  .uc-card:nth-child(6) .uc-photo { background: linear-gradient(160deg, #7a8a8a 0%, #506070 50%, #304050 100%); } */
   .uc-photo { position: absolute; inset: 0; transition: transform 0.4s ease; }
   .uc-card:hover .uc-photo { transform: scale(1.04); }
   .uc-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 55%, transparent 100%); }
@@ -251,13 +258,9 @@
 </section>
 
 <footer>
-  <a href="index.html" class="logo" style="font-size:1rem;">
-    <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
-      <path d="M14 3C14 3 6 8 6 16C6 20.418 9.582 24 14 24C18.418 24 22 20.418 22 16C22 8 14 3 14 3Z" fill="#3ecf8e"/>
-      <path d="M14 10C14 10 10 13.5 10 17C10 19.209 11.791 21 14 21C16.209 21 18 19.209 18 17C18 13.5 14 10 14 10Z" fill="white" opacity="0.4"/>
-    </svg>
-    bloom
-  </a>
+  <a href="index.html" class="logo">
+  <img src="logo.png" alt="Bloom" style="height: 32px;">
+</a>
   <p class="footer-copy">© 2025 Bloom. All rights reserved.</p>
 </footer>
 
