@@ -307,346 +307,403 @@
   <!-- USE CASE LIST -->
   <div class="uc-list" id="uc-list">
 
-    <!-- ITEM 1 -->
-    <div class="uc-item" data-category="sales">
-      <div class="uc-row" onclick="toggleItem(this)">
-        <div class="uc-row-left">
-          <div class="uc-icon cat-sales">📥</div>
-          <div class="uc-meta">
-            <span class="uc-title">Inbound lead qualification &amp; auto-follow-up</span>
-            <span class="uc-subtitle">AI agent scores leads and sends personalised email sequences within minutes of form submission</span>
-          </div>
-        </div>
-        <div class="uc-row-right">
-          <div class="status-wrap"><div class="status-dot live"></div>Live</div>
-          <span class="badge badge-sales">Sales</span>
-          <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-      </div>
-      <div class="uc-panel">
-        <div class="uc-panel-inner">
-          <div class="uc-field full">
-            <label>Goal</label>
-            <p>Respond to every inbound lead within 2 minutes, qualify them based on ICP criteria, and trigger a personalised 3-step email sequence — all without human intervention.</p>
-          </div>
-          <div class="uc-field half">
-            <label>Tools &amp; APIs</label>
-            <div class="tool-tags">
-              <span class="tool-tag">HubSpot</span>
-              <span class="tool-tag">OpenAI GPT-4o</span>
-              <span class="tool-tag">Make.com</span>
-              <span class="tool-tag">Gmail API</span>
-              <span class="tool-tag">Notion</span>
-            </div>
-          </div>
-          <div class="uc-field half">
-            <label>Trigger</label>
-            <p>New form submission in HubSpot CRM</p>
-          </div>
-          <div class="uc-field half">
-            <label>FinOps</label>
-            <div class="finops-grid">
-              <div class="finops-item"><div class="finops-val">~€45/mo</div><div class="finops-lbl">Running cost</div></div>
-              <div class="finops-item"><div class="finops-val">€3,200/mo</div><div class="finops-lbl">Est. value saved</div></div>
-              <div class="finops-item"><div class="finops-val">71×</div><div class="finops-lbl">ROI</div></div>
-            </div>
-          </div>
-          <div class="uc-field full">
-            <label>Outcomes</label>
-            <ul class="outcome-list">
-              <li>Response time reduced from 4h avg to under 2 minutes</li>
-              <li>35% increase in qualified leads moving to next stage</li>
-              <li>Sales team saves 25h/month on manual outreach</li>
-            </ul>
-          </div>
-        </div>
+  <!-- ITEM 1 -->
+<div class="uc-item" data-category="ops">
+  <div class="uc-row" onclick="toggleItem(this)">
+    <div class="uc-row-left">
+      <div class="uc-icon cat-ops">🔮</div>
+      <div class="uc-meta">
+        <span class="uc-title">Customer Churn Prediction & Intervention Pipeline</span>
+        <span class="uc-subtitle">Daily AI-powered churn scoring and personalised re-engagement — before customers cancel</span>
       </div>
     </div>
+    <div class="uc-row-right">
+      <div class="status-wrap"><div class="status-dot concept"></div>Concept</div>
+      <span class="badge badge-ops">Ops</span>
+      <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+  <div class="uc-panel">
+    <div class="uc-panel-inner">
+      <div class="uc-field full">
+        <label>Goal</label>
+        <p>Monitor all customers daily across three data sources (CRM, NPS scores, support tickets), score each at-risk account using GPT-4.1 Nano, and automatically send a personalised re-engagement email to high-risk customers (score ≥ 7) — while alerting the CSM team via Slack and email with a full brief and recommended action. Turns churn from a reactive crisis into a proactive, data-driven daily process.</p>
+      </div>
+      <div class="uc-field half">
+        <label>Tools &amp; APIs</label>
+        <div class="tool-tags">
+          <span class="tool-tag">N8N</span>
+          <span class="tool-tag">OpenAI GPT-4.1 Nano</span>
+          <span class="tool-tag">Google Sheets</span>
+          <span class="tool-tag">Gmail</span>
+          <span class="tool-tag">Slack</span>
+        </div>
+      </div>
+      <div class="uc-field half">
+        <label>Trigger</label>
+        <p>Scheduled daily at 9am — reads customer data, NPS scores (from NPS workflow output), and support ticket history; filters accounts matching at least one risk signal (14+ days no login, NPS ≤ 6, open ticket, or renewal within 30 days).</p>
+      </div>
+      <div class="uc-field half">
+        <label>FinOps</label>
+        <div class="finops-grid">
+          <div class="finops-item"><div class="finops-val">&lt;€0.05/yr</div><div class="finops-lbl">Running cost</div></div>
+          <div class="finops-item"><div class="finops-val">€36,000/yr</div><div class="finops-lbl">Est. value saved</div></div>
+          <div class="finops-item"><div class="finops-val">&gt;100,000×</div><div class="finops-lbl">ROI</div></div>
+        </div>
+      </div>
+      <div class="uc-field full">
+        <label>Outcomes</label>
+        <ul class="outcome-list">
+          <li>Churn signals detected and acted on the same day — pipeline runs every morning vs. weekly manual reviews that are frequently missed</li>
+          <li>390 hours/year of CSM monitoring, scoring, and email-writing saved at medium scale (200 customers), at a cost under €0.05/year in API fees</li>
+          <li>Conservative 5% reduction in annual churn across 200 customers at €300 MRR preserves ~€36,000/year in recurring revenue</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ITEM 2 -->
+<div class="uc-item" data-category="data">
+  <div class="uc-row" onclick="toggleItem(this)">
+    <div class="uc-row-left">
+      <div class="uc-icon cat-data">🕵️</div>
+      <div class="uc-meta">
+        <span class="uc-title">Competitive Intelligence Agent</span>
+        <span class="uc-subtitle">Daily competitor monitoring with semantic dedup and AI-synthesised weekly digest</span>
+      </div>
+    </div>
+    <div class="uc-row-right">
+      <div class="status-wrap"><div class="status-dot concept"></div>Concept</div>
+      <span class="badge badge-data">Data</span>
+      <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+  <div class="uc-panel">
+    <div class="uc-panel-inner">
+      <div class="uc-field full">
+        <label>Goal</label>
+        <p>Monitor unlimited competitors daily via Google Alert RSS feeds and live blog scraping, extract and score structured insights with GPT, deduplicate semantically via Pinecone, and deliver an executive-ready competitive digest to Slack and Gmail every Monday — zero manual effort, always-on.</p>
+      </div>
+      <div class="uc-field half">
+        <label>Tools &amp; APIs</label>
+        <div class="tool-tags">
+          <span class="tool-tag">N8N</span>
+          <span class="tool-tag">Apify</span>
+          <span class="tool-tag">OpenAI GPT-4.1 Nano</span>
+          <span class="tool-tag">Pinecone</span>
+          <span class="tool-tag">Google Sheets</span>
+          <span class="tool-tag">Slack</span>
+          <span class="tool-tag">Gmail</span>
+        </div>
+      </div>
+      <div class="uc-field half">
+        <label>Trigger</label>
+        <p>Two scheduled workflows: Daily Collector fires at 08:00 every day per competitor; Weekly Digest fires every Monday at 09:00, reads the past 7 days of insights, and delivers a synthesised briefing.</p>
+      </div>
+      <div class="uc-field half">
+        <label>FinOps</label>
+        <div class="finops-grid">
+          <div class="finops-item"><div class="finops-val">~€249/yr</div><div class="finops-lbl">Running cost</div></div>
+          <div class="finops-item"><div class="finops-val">~€9,328/yr</div><div class="finops-lbl">Est. value saved</div></div>
+          <div class="finops-item"><div class="finops-val">~37×</div><div class="finops-lbl">ROI</div></div>
+        </div>
+      </div>
+      <div class="uc-field full">
+        <label>Outcomes</label>
+        <ul class="outcome-list">
+          <li>Competitor signals surfaced within 24 hours vs. days or weeks with manual monitoring — eliminating strategic lag before it reaches customers or prospects</li>
+          <li>5–8 hours of manual analyst work per week eliminated across any number of competitors, with coverage scaling by simply adding a row to a Google Sheet</li>
+          <li>Semantic deduplication via Pinecone (0.92 cosine threshold) ensures the same signal is never processed twice, regardless of how many sources cover it</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- ITEM 2 -->
-    <div class="uc-item" data-category="finance">
-      <div class="uc-row" onclick="toggleItem(this)">
-        <div class="uc-row-left">
-          <div class="uc-icon cat-finance">🧾</div>
-          <div class="uc-meta">
-            <span class="uc-title">Invoice extraction &amp; accounting sync</span>
-            <span class="uc-subtitle">Reads PDF invoices from email, extracts data, and posts entries to accounting software automatically</span>
-          </div>
-        </div>
-        <div class="uc-row-right">
-          <div class="status-wrap"><div class="status-dot live"></div>Live</div>
-          <span class="badge badge-finance">Finance</span>
-          <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-      </div>
-      <div class="uc-panel">
-        <div class="uc-panel-inner">
-          <div class="uc-field full">
-            <label>Goal</label>
-            <p>Eliminate manual invoice entry by automatically extracting key data (vendor, amount, date, VAT, line items) from PDF attachments in a monitored inbox and syncing to the accounting system.</p>
-          </div>
-          <div class="uc-field half">
-            <label>Tools &amp; APIs</label>
-            <div class="tool-tags">
-              <span class="tool-tag">Gmail API</span>
-              <span class="tool-tag">OpenAI GPT-4o Vision</span>
-              <span class="tool-tag">Make.com</span>
-              <span class="tool-tag">Pennylane API</span>
-              <span class="tool-tag">Google Drive</span>
-            </div>
-          </div>
-          <div class="uc-field half">
-            <label>Trigger</label>
-            <p>New email with PDF attachment received in accounting inbox</p>
-          </div>
-          <div class="uc-field half">
-            <label>FinOps</label>
-            <div class="finops-grid">
-              <div class="finops-item"><div class="finops-val">~€30/mo</div><div class="finops-lbl">Running cost</div></div>
-              <div class="finops-item"><div class="finops-val">€2,100/mo</div><div class="finops-lbl">Est. value saved</div></div>
-              <div class="finops-item"><div class="finops-val">70×</div><div class="finops-lbl">ROI</div></div>
-            </div>
-          </div>
-          <div class="uc-field full">
-            <label>Outcomes</label>
-            <ul class="outcome-list">
-              <li>~200 invoices/month processed with zero manual entry</li>
-              <li>Accounting team saves 40h/month on data entry</li>
-              <li>Error rate reduced from ~8% to under 0.5%</li>
-            </ul>
-          </div>
-        </div>
+<!-- ITEM 3 -->
+<div class="uc-item" data-category="hr">
+  <div class="uc-row" onclick="toggleItem(this)">
+    <div class="uc-row-left">
+      <div class="uc-icon cat-hr">📋</div>
+      <div class="uc-meta">
+        <span class="uc-title">Hiring Pipeline Screener</span>
+        <span class="uc-subtitle">Automated CV scoring and recruiter alerting — from inbox to structured brief in under 30 seconds</span>
       </div>
     </div>
+    <div class="uc-row-right">
+      <div class="status-wrap"><div class="status-dot concept"></div>Concept</div>
+      <span class="badge badge-hr">HR</span>
+      <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+  <div class="uc-panel">
+    <div class="uc-panel-inner">
+      <div class="uc-field full">
+        <label>Goal</label>
+        <p>Automatically extract, parse, and score every inbound CV against the active job description, then alert the recruiter with a full 18-field candidate brief for anyone scoring 70+. Every candidate is logged to Google Sheets regardless of score, creating a complete, auditable pipeline database.</p>
+      </div>
+      <div class="uc-field half">
+        <label>Tools &amp; APIs</label>
+        <div class="tool-tags">
+          <span class="tool-tag">N8N</span>
+          <span class="tool-tag">Gmail</span>
+          <span class="tool-tag">OpenAI GPT-4.1 Nano</span>
+          <span class="tool-tag">Google Sheets</span>
+        </div>
+      </div>
+      <div class="uc-field half">
+        <label>Trigger</label>
+        <p>Gmail inbox polled every 15 minutes for new emails with PDF attachments — CV is downloaded, text extracted, parsed and scored automatically before the recruiter opens the email.</p>
+      </div>
+      <div class="uc-field half">
+        <label>FinOps</label>
+        <div class="finops-grid">
+          <div class="finops-item"><div class="finops-val">~€240/yr</div><div class="finops-lbl">Running cost</div></div>
+          <div class="finops-item"><div class="finops-val">~€20,020/yr</div><div class="finops-lbl">Est. value saved</div></div>
+          <div class="finops-item"><div class="finops-val">~83×</div><div class="finops-lbl">ROI</div></div>
+        </div>
+      </div>
+      <div class="uc-field full">
+        <label>Outcomes</label>
+        <ul class="outcome-list">
+          <li>Screening time reduced from 15–30 minutes per CV to under 30 seconds — at medium volume (40 CVs/week) that's over 1,100 hours of recruiter time saved annually</li>
+          <li>Identical scoring rubric applied to every candidate regardless of recruiter, workload, or time of day — eliminating inconsistency and creating a documented audit trail for every hiring decision</li>
+          <li>JD and score threshold stored in Google Sheets so the workflow is fully role-agnostic — redeployable to any new role with zero code changes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- ITEM 3 -->
-    <div class="uc-item" data-category="ops">
-      <div class="uc-row" onclick="toggleItem(this)">
-        <div class="uc-row-left">
-          <div class="uc-icon cat-ops">📊</div>
-          <div class="uc-meta">
-            <span class="uc-title">Weekly performance report generator</span>
-            <span class="uc-subtitle">Pulls KPIs from multiple sources, generates a narrative summary, and delivers a formatted report every Monday</span>
-          </div>
-        </div>
-        <div class="uc-row-right">
-          <div class="status-wrap"><div class="status-dot live"></div>Live</div>
-          <span class="badge badge-ops">Operations</span>
-          <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-      </div>
-      <div class="uc-panel">
-        <div class="uc-panel-inner">
-          <div class="uc-field full">
-            <label>Goal</label>
-            <p>Every Monday at 7am, pull KPIs from GA4, HubSpot, Stripe, and a Google Sheet dashboard. Use GPT-4o to write a plain-English narrative summary with highlights and anomalies. Send formatted PDF report to leadership team via email and Slack.</p>
-          </div>
-          <div class="uc-field half">
-            <label>Tools &amp; APIs</label>
-            <div class="tool-tags">
-              <span class="tool-tag">Google Analytics API</span>
-              <span class="tool-tag">Stripe API</span>
-              <span class="tool-tag">HubSpot API</span>
-              <span class="tool-tag">OpenAI GPT-4o</span>
-              <span class="tool-tag">Make.com</span>
-              <span class="tool-tag">Slack API</span>
-              <span class="tool-tag">Google Sheets</span>
-            </div>
-          </div>
-          <div class="uc-field half">
-            <label>Trigger</label>
-            <p>Scheduled — every Monday at 07:00</p>
-          </div>
-          <div class="uc-field half">
-            <label>FinOps</label>
-            <div class="finops-grid">
-              <div class="finops-item"><div class="finops-val">~€20/mo</div><div class="finops-lbl">Running cost</div></div>
-              <div class="finops-item"><div class="finops-val">€1,800/mo</div><div class="finops-lbl">Est. value saved</div></div>
-              <div class="finops-item"><div class="finops-val">90×</div><div class="finops-lbl">ROI</div></div>
-            </div>
-          </div>
-          <div class="uc-field full">
-            <label>Outcomes</label>
-            <ul class="outcome-list">
-              <li>Operations manager saves 6h/week previously spent building reports</li>
-              <li>Report delivered 100% on time, every week — previously ~60% on time</li>
-              <li>Anomaly detection flagged 3 revenue drops before end-of-day review</li>
-            </ul>
-          </div>
-        </div>
+<!-- ITEM 4 -->
+<div class="uc-item" data-category="marketing">
+  <div class="uc-row" onclick="toggleItem(this)">
+    <div class="uc-row-left">
+      <div class="uc-icon cat-marketing">✍️</div>
+      <div class="uc-meta">
+        <span class="uc-title">Marketing Content Repurposing Pipeline</span>
+        <span class="uc-subtitle">One article brief → LinkedIn post, tweet thread, newsletter blurb &amp; SEO meta in 30 seconds</span>
       </div>
     </div>
+    <div class="uc-row-right">
+      <div class="status-wrap"><div class="status-dot concept"></div>Concept</div>
+      <span class="badge badge-marketing">Marketing</span>
+      <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+  <div class="uc-panel">
+    <div class="uc-panel-inner">
+      <div class="uc-field full">
+        <label>Goal</label>
+        <p>Transform a single content brief submitted via Typeform into four publication-ready formats — LinkedIn post, 6-tweet thread, newsletter blurb, and SEO metadata — simultaneously, using 4 parallel GPT calls with format-specific personas and hard output constraints, then log all outputs to Google Sheets in a single structured row.</p>
+      </div>
+      <div class="uc-field half">
+        <label>Tools &amp; APIs</label>
+        <div class="tool-tags">
+          <span class="tool-tag">N8N</span>
+          <span class="tool-tag">Typeform</span>
+          <span class="tool-tag">OpenAI GPT-4.1 Nano</span>
+          <span class="tool-tag">Google Sheets</span>
+          <span class="tool-tag">Slack</span>
+        </div>
+      </div>
+      <div class="uc-field half">
+        <label>Trigger</label>
+        <p>Typeform webhook fires instantly on form submission — marketer fills in title, key points, tone, and target audience; pipeline completes all 4 formats in under 30 seconds.</p>
+      </div>
+      <div class="uc-field half">
+        <label>FinOps</label>
+        <div class="finops-grid">
+          <div class="finops-item"><div class="finops-val">~€0.20/yr</div><div class="finops-lbl">Running cost</div></div>
+          <div class="finops-item"><div class="finops-val">~€7,956/yr</div><div class="finops-lbl">Est. value saved</div></div>
+          <div class="finops-item"><div class="finops-val">&gt;39,000×</div><div class="finops-lbl">ROI</div></div>
+        </div>
+      </div>
+      <div class="uc-field full">
+        <label>Outcomes</label>
+        <ul class="outcome-list">
+          <li>Content repurposing time reduced from 1h45 per piece to under 30 seconds — at 5 pieces/week that's 455 hours and ~€7,956 in annual labour costs saved</li>
+          <li>4 formats produced consistently for every piece of content vs. 1–2 inconsistently, with brand voice enforced via format-specific system prompts regardless of who submits the brief</li>
+          <li>SEO metadata generated by a dedicated SEO-persona prompt every time — no longer an afterthought written by someone without SEO training</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- ITEM 4 -->
-    <div class="uc-item" data-category="support">
-      <div class="uc-row" onclick="toggleItem(this)">
-        <div class="uc-row-left">
-          <div class="uc-icon cat-support">💬</div>
-          <div class="uc-meta">
-            <span class="uc-title">Tier-1 customer support AI agent</span>
-            <span class="uc-subtitle">Handles FAQ, order status, and account queries autonomously — escalates only when needed</span>
-          </div>
-        </div>
-        <div class="uc-row-right">
-          <div class="status-wrap"><div class="status-dot dev"></div>In dev</div>
-          <span class="badge badge-support">Support</span>
-          <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-      </div>
-      <div class="uc-panel">
-        <div class="uc-panel-inner">
-          <div class="uc-field full">
-            <label>Goal</label>
-            <p>Deploy a GPT-4o powered support agent on the client's website chat and email. Agent handles tier-1 queries (tracking, refunds, FAQs, account changes) autonomously, updates CRM on every interaction, and escalates to human with full context only when needed.</p>
-          </div>
-          <div class="uc-field half">
-            <label>Tools &amp; APIs</label>
-            <div class="tool-tags">
-              <span class="tool-tag">OpenAI Assistants API</span>
-              <span class="tool-tag">Intercom</span>
-              <span class="tool-tag">HubSpot CRM</span>
-              <span class="tool-tag">Shopify API</span>
-              <span class="tool-tag">Make.com</span>
-              <span class="tool-tag">Notion (KB)</span>
-            </div>
-          </div>
-          <div class="uc-field half">
-            <label>Trigger</label>
-            <p>New inbound message in Intercom chat or support inbox</p>
-          </div>
-          <div class="uc-field half">
-            <label>FinOps</label>
-            <div class="finops-grid">
-              <div class="finops-item"><div class="finops-val">~€120/mo</div><div class="finops-lbl">Running cost</div></div>
-              <div class="finops-item"><div class="finops-val">€6,500/mo</div><div class="finops-lbl">Est. value saved</div></div>
-              <div class="finops-item"><div class="finops-val">54×</div><div class="finops-lbl">ROI</div></div>
-            </div>
-          </div>
-          <div class="uc-field full">
-            <label>Expected outcomes</label>
-            <ul class="outcome-list">
-              <li>70% of support tickets resolved without human involvement</li>
-              <li>Average response time from 4h to under 30 seconds</li>
-              <li>Support team refocused on complex, high-value cases</li>
-            </ul>
-          </div>
-        </div>
+<!-- ITEM 5 -->
+<div class="uc-item" data-category="growth">
+  <div class="uc-row" onclick="toggleItem(this)">
+    <div class="uc-row-left">
+      <div class="uc-icon cat-growth">📊</div>
+      <div class="uc-meta">
+        <span class="uc-title">NPS &amp; Review Sentiment Tracker</span>
+        <span class="uc-subtitle">Automated feedback analysis pipeline with real-time detractor alerts and live Looker Studio dashboard</span>
       </div>
     </div>
+    <div class="uc-row-right">
+      <div class="status-wrap"><div class="status-dot concept"></div>Concept</div>
+      <span class="badge badge-growth">Growth</span>
+      <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+  <div class="uc-panel">
+    <div class="uc-panel-inner">
+      <div class="uc-field full">
+        <label>Goal</label>
+        <p>Ingest raw NPS survey responses every 15 minutes, analyse each with GPT to extract sentiment, themes, a one-line summary, and a suggested product action, then write 16 structured fields to Google Sheets and alert the team on Slack the moment a detractor submits — feeding a live Looker Studio dashboard that updates continuously.</p>
+      </div>
+      <div class="uc-field half">
+        <label>Tools &amp; APIs</label>
+        <div class="tool-tags">
+          <span class="tool-tag">N8N</span>
+          <span class="tool-tag">Google Forms</span>
+          <span class="tool-tag">OpenAI GPT-4.1 Nano</span>
+          <span class="tool-tag">Google Sheets</span>
+          <span class="tool-tag">Slack</span>
+          <span class="tool-tag">Looker Studio</span>
+        </div>
+      </div>
+      <div class="uc-field half">
+        <label>Trigger</label>
+        <p>Scheduled every 15 minutes — reads all form responses, deduplicates via deterministic hash, and processes only new submissions. Detractors (NPS ≤ 6) trigger an immediate Slack alert on the same run.</p>
+      </div>
+      <div class="uc-field half">
+        <label>FinOps</label>
+        <div class="finops-grid">
+          <div class="finops-item"><div class="finops-val">&lt;€0.20/yr</div><div class="finops-lbl">Running cost</div></div>
+          <div class="finops-item"><div class="finops-val">~€10,763/yr</div><div class="finops-lbl">Est. value saved</div></div>
+          <div class="finops-item"><div class="finops-val">&gt;53,800×</div><div class="finops-lbl">ROI</div></div>
+        </div>
+      </div>
+      <div class="uc-field full">
+        <label>Outcomes</label>
+        <ul class="outcome-list">
+          <li>Time to insight reduced from days or weeks to under 15 minutes — dashboard refreshes continuously vs. weekly manual updates, enabling the business to act on current rather than stale data</li>
+          <li>Detractor Slack alert fires within 15 minutes of submission — without automation, detractors may wait days before anyone notices, accelerating churn</li>
+          <li>At medium volume (50 reviews/week), over €10,000 in annual labour costs saved with more consistent, structured output than any manual analysis process can guarantee</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- ITEM 5 -->
-    <div class="uc-item" data-category="hr">
-      <div class="uc-row" onclick="toggleItem(this)">
-        <div class="uc-row-left">
-          <div class="uc-icon cat-hr">🔁</div>
-          <div class="uc-meta">
-            <span class="uc-title">Employee onboarding workflow automation</span>
-            <span class="uc-subtitle">Triggers contract creation, tool provisioning, Slack setup, and task checklists on new hire confirmation</span>
-          </div>
-        </div>
-        <div class="uc-row-right">
-          <div class="status-wrap"><div class="status-dot concept"></div>Concept</div>
-          <span class="badge badge-hr">HR</span>
-          <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-      </div>
-      <div class="uc-panel">
-        <div class="uc-panel-inner">
-          <div class="uc-field full">
-            <label>Goal</label>
-            <p>When a new hire is confirmed in the ATS, automatically trigger: DocuSign contract, IT tool provisioning requests, Slack channel creation, Notion onboarding page from template, and a 30-day task checklist for the manager — all in under 5 minutes.</p>
-          </div>
-          <div class="uc-field half">
-            <label>Tools &amp; APIs</label>
-            <div class="tool-tags">
-              <span class="tool-tag">Lever ATS</span>
-              <span class="tool-tag">DocuSign API</span>
-              <span class="tool-tag">Slack API</span>
-              <span class="tool-tag">Notion API</span>
-              <span class="tool-tag">Google Workspace</span>
-              <span class="tool-tag">Make.com</span>
-            </div>
-          </div>
-          <div class="uc-field half">
-            <label>Trigger</label>
-            <p>Candidate status changed to "Offer Accepted" in Lever ATS</p>
-          </div>
-          <div class="uc-field half">
-            <label>FinOps</label>
-            <div class="finops-grid">
-              <div class="finops-item"><div class="finops-val">~€25/mo</div><div class="finops-lbl">Running cost</div></div>
-              <div class="finops-item"><div class="finops-val">€1,400/mo</div><div class="finops-lbl">Est. value saved</div></div>
-              <div class="finops-item"><div class="finops-val">56×</div><div class="finops-lbl">ROI</div></div>
-            </div>
-          </div>
-          <div class="uc-field full">
-            <label>Expected outcomes</label>
-            <ul class="outcome-list">
-              <li>HR admin time per hire reduced from ~5h to under 10 minutes</li>
-              <li>Zero missed tool provisioning steps</li>
-              <li>New hire Day 1 experience standardised across the company</li>
-            </ul>
-          </div>
-        </div>
+<!-- ITEM 6 -->
+<div class="uc-item" data-category="sales">
+  <div class="uc-row" onclick="toggleItem(this)">
+    <div class="uc-row-left">
+      <div class="uc-icon cat-sales">🎯</div>
+      <div class="uc-meta">
+        <span class="uc-title">Sales Lead Enrichment &amp; Scoring Pipeline</span>
+        <span class="uc-subtitle">Instant ICP scoring, company research, and personalised talk track for every inbound lead</span>
       </div>
     </div>
+    <div class="uc-row-right">
+      <div class="status-wrap"><div class="status-dot concept"></div>Concept</div>
+      <span class="badge badge-sales">Sales</span>
+      <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+  <div class="uc-panel">
+    <div class="uc-panel-inner">
+      <div class="uc-field full">
+        <label>Goal</label>
+        <p>Enrich every inbound contact form submission with firmographic data from Hunter.io and a live homepage scrape, generate a 3-sentence company summary, score the lead 1–10 against a defined ICP, and — for hot leads (score ≥ 8) — generate a personalised talk track and fire a Slack alert and HTML email to the sales team, all within 60 seconds of form submission.</p>
+      </div>
+      <div class="uc-field half">
+        <label>Tools &amp; APIs</label>
+        <div class="tool-tags">
+          <span class="tool-tag">N8N</span>
+          <span class="tool-tag">Typeform</span>
+          <span class="tool-tag">Hunter.io API</span>
+          <span class="tool-tag">OpenAI GPT-4.1 Nano</span>
+          <span class="tool-tag">Google Sheets</span>
+          <span class="tool-tag">Slack</span>
+          <span class="tool-tag">Gmail</span>
+        </div>
+      </div>
+      <div class="uc-field half">
+        <label>Trigger</label>
+        <p>Typeform webhook fires instantly on contact form submission — enrichment, scoring, and alerting complete in under 60 seconds, before a BDR has opened their browser.</p>
+      </div>
+      <div class="uc-field half">
+        <label>FinOps</label>
+        <div class="finops-grid">
+          <div class="finops-item"><div class="finops-val">~€839/yr</div><div class="finops-lbl">Running cost</div></div>
+          <div class="finops-item"><div class="finops-val">~€16,380/yr</div><div class="finops-lbl">Est. value saved</div></div>
+          <div class="finops-item"><div class="finops-val">~18×</div><div class="finops-lbl">ROI</div></div>
+        </div>
+      </div>
+      <div class="uc-field full">
+        <label>Outcomes</label>
+        <ul class="outcome-list">
+          <li>Time from form submission to first contact reduced from hours or days to under 60 seconds for hot leads — one of the strongest predictors of B2B lead conversion</li>
+          <li>~54 minutes of manual research, qualification, and outreach writing per lead eliminated — at 20 leads/week that's 936 hours and ~€16,380 in annual BDR costs saved</li>
+          <li>Every lead logged with 25 structured fields including ICP score, reasoning, and talk track — creating a compounding audit trail to calibrate ICP criteria based on actual conversion data</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- ITEM 6 -->
-    <div class="uc-item" data-category="growth">
-      <div class="uc-row" onclick="toggleItem(this)">
-        <div class="uc-row-left">
-          <div class="uc-icon cat-growth">📡</div>
-          <div class="uc-meta">
-            <span class="uc-title">Prospect research &amp; enrichment agent</span>
-            <span class="uc-subtitle">Enriches a list of companies with firmographic data, LinkedIn info, and tech stack — ready for outbound</span>
-          </div>
-        </div>
-        <div class="uc-row-right">
-          <div class="status-wrap"><div class="status-dot dev"></div>In dev</div>
-          <span class="badge badge-growth">Growth</span>
-          <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-      </div>
-      <div class="uc-panel">
-        <div class="uc-panel-inner">
-          <div class="uc-field full">
-            <label>Goal</label>
-            <p>Takes a CSV of target companies, enriches each with headcount, industry, funding stage, tech stack (via BuiltWith), LinkedIn company URL, and a GPT-generated personalisation hook. Outputs an enriched CSV ready to import into the sales CRM for outbound sequencing.</p>
-          </div>
-          <div class="uc-field half">
-            <label>Tools &amp; APIs</label>
-            <div class="tool-tags">
-              <span class="tool-tag">OpenAI GPT-4o</span>
-              <span class="tool-tag">Clearbit API</span>
-              <span class="tool-tag">BuiltWith API</span>
-              <span class="tool-tag">LinkedIn (scrape)</span>
-              <span class="tool-tag">Make.com</span>
-              <span class="tool-tag">Google Sheets</span>
-            </div>
-          </div>
-          <div class="uc-field half">
-            <label>Trigger</label>
-            <p>Manual or scheduled — new CSV uploaded to Google Drive folder</p>
-          </div>
-          <div class="uc-field half">
-            <label>FinOps</label>
-            <div class="finops-grid">
-              <div class="finops-item"><div class="finops-val">~€60/mo</div><div class="finops-lbl">Running cost</div></div>
-              <div class="finops-item"><div class="finops-val">€2,800/mo</div><div class="finops-lbl">Est. value saved</div></div>
-              <div class="finops-item"><div class="finops-val">47×</div><div class="finops-lbl">ROI</div></div>
-            </div>
-          </div>
-          <div class="uc-field full">
-            <label>Expected outcomes</label>
-            <ul class="outcome-list">
-              <li>Research time per prospect reduced from 15min to ~8 seconds</li>
-              <li>BDR team can process 500 prospects/day vs ~30 manually</li>
-              <li>Personalisation quality scores 40% higher than manual research</li>
-            </ul>
-          </div>
-        </div>
+<!-- ITEM 7 -->
+<div class="uc-item" data-category="support">
+  <div class="uc-row" onclick="toggleItem(this)">
+    <div class="uc-row-left">
+      <div class="uc-icon cat-support">🎧</div>
+      <div class="uc-meta">
+        <span class="uc-title">Multi-channel Support Triage Agent</span>
+        <span class="uc-subtitle">AI router classifies tickets and dispatches to specialist agents — draft response in under 5 minutes</span>
       </div>
     </div>
+    <div class="uc-row-right">
+      <div class="status-wrap"><div class="status-dot concept"></div>Concept</div>
+      <span class="badge badge-support">Support</span>
+      <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+  <div class="uc-panel">
+    <div class="uc-panel-inner">
+      <div class="uc-field full">
+        <label>Goal</label>
+        <p>Automatically classify every inbound support ticket by category (technical, billing, how-to, urgent) using a Router Agent, then dispatch to exactly one Specialist Agent — each with its own persona and temperature — that returns a tailored draft response. Urgent tickets trigger an immediate Slack alert. All tickets logged to Google Sheets with a 14-column structured record.</p>
+      </div>
+      <div class="uc-field half">
+        <label>Tools &amp; APIs</label>
+        <div class="tool-tags">
+          <span class="tool-tag">N8N</span>
+          <span class="tool-tag">Google Forms</span>
+          <span class="tool-tag">OpenAI GPT-4.1 Nano</span>
+          <span class="tool-tag">Google Sheets</span>
+          <span class="tool-tag">Slack</span>
+        </div>
+      </div>
+      <div class="uc-field half">
+        <label>Trigger</label>
+        <p>Google Forms polled every 5 minutes — new submissions deduplicated via deterministic hash, then routed through the Router Agent and dispatched to the appropriate specialist, 24/7.</p>
+      </div>
+      <div class="uc-field half">
+        <label>FinOps</label>
+        <div class="finops-grid">
+          <div class="finops-item"><div class="finops-val">&lt;€0.40/yr</div><div class="finops-lbl">Running cost</div></div>
+          <div class="finops-item"><div class="finops-val">~€37,922/yr</div><div class="finops-lbl">Est. value saved</div></div>
+          <div class="finops-item"><div class="finops-val">&gt;90,000×</div><div class="finops-lbl">ROI</div></div>
+        </div>
+      </div>
+      <div class="uc-field full">
+        <label>Outcomes</label>
+        <ul class="outcome-list">
+          <li>Time to first response draft reduced from 20–25 minutes per ticket to under 5 minutes — at 100 tickets/week that's over 2,100 hours and ~€37,922 in annual support labour saved</li>
+          <li>Urgent tickets receive a Slack alert within 5 minutes of submission vs. sitting unnoticed in a shared inbox — the difference between a recoverable incident and a churned enterprise customer</li>
+          <li>4 specialist agents with distinct personas and temperatures replace generalist agents — every billing response is empathetic, every technical response asks for logs, structurally impossible at human scale without a large dedicated team</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
 
   </div><!-- end uc-list -->
 
