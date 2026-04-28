@@ -40,7 +40,9 @@
   .hero { position: relative; height: 88vh; min-height: 560px; overflow: hidden; border-radius: 0 0 20px 20px; margin: 0 1rem; }
   .hero-photo-bg {
     position: absolute; inset: 0;
-    background: linear-gradient(rgba(15,20,30,0.5), rgba(15,20,30,0.6)), linear-gradient(135deg, #2c3e50 0%, #3d5a73 40%, #2c3a47 100%);
+    background: linear-gradient(rgba(15,20,30,0.5), rgba(15,20,30,0.6)),
+    url('hero.avif') center/cover no-repeat;
+    /* background: linear-gradient(rgba(15,20,30,0.5), rgba(15,20,30,0.6)), linear-gradient(135deg, #2c3e50 0%, #3d5a73 40%, #2c3a47 100%); */ 
   }
   .hero-photo-bg::before {
     content: ''; position: absolute; inset: 0;
