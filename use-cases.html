@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Use Cases — Bloom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #3ecf8e;
+    --green-dark: #22a86e;
+    --green-bg: #f0fdf7;
+    --green-border: #d1fae5;
+    --text: #111111;
+    --muted: #6b7280;
+    --light: #f7f7f5;
+    --border: #e5e7eb;
+    --white: #ffffff;
+    --font: 'Inter', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); background: var(--light); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white); border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 3rem;
+  }
+  .logo { display: flex; align-items: center; gap: 0.45rem; text-decoration: none; color: var(--text); font-size: 1.15rem; font-weight: 600; letter-spacing: -0.02em; }
+  .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+  .nav-links a { color: var(--text); text-decoration: none; font-size: 0.95rem; font-weight: 400; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--muted); }
+  .nav-links a.active { font-weight: 600; }
+  .btn-dark { background: var(--text); color: var(--white); padding: 0.6rem 1.4rem; border-radius: 50px; font-size: 0.9rem; font-weight: 500; font-family: var(--font); text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; display: inline-block; }
+  .btn-dark:hover { background: #333; }
+
+  /* PAGE HEADER */
+  .page-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 3rem 3rem;
+  }
+  .page-header-inner { max-width: 1100px; margin: 0 auto; }
+  .eyebrow { font-size: 0.73rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-dark); margin-bottom: 0.75rem; }
+  .page-header h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 1rem; }
+  .page-header h1 .muted { color: #9ca3af; }
+  .page-header p { font-size: 1rem; color: var(--muted); max-width: 520px; line-height: 1.7; }
+
+  /* FILTERS */
+  .filters-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 3rem;
+    position: sticky;
+    top: 61px;
+    z-index: 90;
+  }
+  .filters-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+  .filter-label { font-size: 0.78rem; font-weight: 500; color: var(--muted); margin-right: 0.5rem; }
+  .filter-btn {
+    font-size: 0.82rem; font-weight: 500; font-family: var(--font);
+    padding: 0.4rem 1rem; border-radius: 50px;
+    border: 1px solid var(--border); background: var(--white); color: var(--muted);
+    cursor: pointer; transition: all 0.15s;
+  }
+  .filter-btn:hover { border-color: #aaa; color: var(--text); }
+  .filter-btn.active { background: var(--text); color: var(--white); border-color: var(--text); }
+
+  /* MAIN CONTENT */
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem 5rem; }
+
+  /* STATS ROW */
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
+  .stat-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem 1.5rem; }
+  .stat-num { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.03em; color: var(--text); line-height: 1; margin-bottom: 0.25rem; }
+  .stat-desc { font-size: 0.78rem; color: var(--muted); }
+
+  /* USE CASE LIST */
+  .uc-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .uc-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .uc-item:hover { border-color: #d1d5db; }
+  .uc-item.open { border-color: var(--green-dark); box-shadow: 0 0 0 3px rgba(34,168,110,0.08); }
+
+  /* ROW — collapsed state */
+  .uc-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 1.5rem 1.75rem;
+    cursor: pointer;
+    gap: 1rem;
+    user-select: none;
+  }
+
+  .uc-row-left { display: flex; align-items: center; gap: 1.25rem; }
+
+  .uc-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+  }
+
+  .uc-icon.cat-sales      { background: #fef3c7; }
+  .uc-icon.cat-ops        { background: #ede9fe; }
+  .uc-icon.cat-finance    { background: #dbeafe; }
+  .uc-icon.cat-support    { background: #fce7f3; }
+  .uc-icon.cat-hr         { background: #d1fae5; }
+  .uc-icon.cat-growth     { background: #ffedd5; }
+  .uc-icon.cat-data       { background: #e0f2fe; }
+  .uc-icon.cat-marketing  { background: #fdf4ff; }
+
+  .uc-meta { display: flex; flex-direction: column; gap: 0.2rem; }
+  .uc-title { font-size: 1rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
+  .uc-subtitle { font-size: 0.82rem; color: var(--muted); }
+
+  .uc-row-right { display: flex; align-items: center; gap: 0.75rem; }
+
+  .badge {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em;
+    text-transform: uppercase; padding: 0.25rem 0.65rem;
+    border-radius: 50px; white-space: nowrap;
+  }
+  .badge-sales     { background: #fef3c7; color: #92400e; }
+  .badge-ops       { background: #ede9fe; color: #5b21b6; }
+  .badge-finance   { background: #dbeafe; color: #1e40af; }
+  .badge-support   { background: #fce7f3; color: #9d174d; }
+  .badge-hr        { background: #d1fae5; color: #065f46; }
+  .badge-growth    { background: #ffedd5; color: #9a3412; }
+  .badge-data      { background: #e0f2fe; color: #075985; }
+  .badge-marketing { background: #fdf4ff; color: #6b21a8; }
+
+  .chevron {
+    width: 20px; height: 20px; flex-shrink: 0;
+    stroke: var(--muted); fill: none; stroke-width: 2;
+    stroke-linecap: round; stroke-linejoin: round;
+    transition: transform 0.25s ease;
+  }
+  .uc-item.open .chevron { transform: rotate(180deg); }
+
+  /* EXPANDED PANEL */
+  .uc-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .uc-item.open .uc-panel { max-height: 1000px; }
+
+  .uc-panel-inner {
+    border-top: 1px solid var(--border);
+    padding: 2rem 1.75rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem 2rem;
+  }
+
+  /* Full-width fields */
+  .uc-field.full { grid-column: 1 / -1; }
+  .uc-field.half { grid-column: span 1; }
+
+  .uc-field label {
+    display: block;
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 0.5rem;
+  }
+
+  .uc-field p {
+    font-size: 0.9rem; color: var(--text); line-height: 1.6;
+  }
+
+  /* Tool tags */
+  .tool-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tool-tag {
+    font-size: 0.78rem; font-weight: 500;
+    padding: 0.3rem 0.75rem; border-radius: 50px;
+    background: var(--light); border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  /* FinOps */
+  .finops-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+  .finops-item { background: var(--light); border-radius: 10px; padding: 0.85rem 1rem; }
+  .finops-val { font-size: 1.1rem; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+  .finops-lbl { font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; }
+
+  /* Outcome */
+  .outcome-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .outcome-list li { font-size: 0.88rem; color: var(--text); display: flex; align-items: flex-start; gap: 0.5rem; }
+  .outcome-list li::before { content: '✓'; color: var(--green-dark); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+  /* Status dot */
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .status-dot.live { background: var(--green); box-shadow: 0 0 0 3px rgba(62,207,142,0.2); }
+  .status-dot.dev  { background: #f59e0b; box-shadow: 0 0 0 3px rgba(245,158,11,0.2); }
+  .status-dot.concept { background: #9ca3af; }
+  .status-wrap { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--muted); }
+
+  /* CTA banner */
+  .cta-banner {
+    background: var(--text); border-radius: 20px; padding: 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 3rem; gap: 2rem; flex-wrap: wrap;
+  }
+  .cta-banner h2 { font-size: 1.5rem; font-weight: 700; color: var(--white); letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+  .cta-banner p { font-size: 0.9rem; color: rgba(255,255,255,0.5); }
+  .btn-green { background: var(--green); color: #0d0d0d; padding: 0.85rem 2rem; border-radius: 50px; font-size: 0.95rem; font-weight: 600; font-family: var(--font); text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; display: inline-block; white-space: nowrap; }
+  .btn-green:hover { background: #5adfaa; }
+
+  /* FOOTER */
+  footer { padding: 2rem 3rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: var(--white); }
+  .footer-copy { font-size: 0.8rem; color: var(--muted); }
+
+  /* HIDDEN (filter) */
+  .uc-item.hidden { display: none; }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .page-header, .filters-bar { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .main { padding: 2rem 1.5rem 4rem; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .uc-panel-inner { grid-template-columns: 1fr; }
+    .uc-field.half { grid-column: span 1; }
+    .finops-grid { grid-template-columns: 1fr 1fr; }
+    .cta-banner { flex-direction: column; align-items: flex-start; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+      <path d="M14 3C14 3 6 8 6 16C6 20.418 9.582 24 14 24C18.418 24 22 20.418 22 16C22 8 14 3 14 3Z" fill="#3ecf8e"/>
+      <path d="M14 10C14 10 10 13.5 10 17C10 19.209 11.791 21 14 21C16.209 21 18 19.209 18 17C18 13.5 14 10 14 10Z" fill="white" opacity="0.4"/>
+    </svg>
+    bloom
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#how">How it works</a></li>
+    <li><a href="use-cases.html" class="active">Use cases</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" class="btn-dark">Book a demo</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="eyebrow">Portfolio</p>
+    <h1><span class="muted">Automations &amp; agents</span><br>we've built.</h1>
+    <p>A live portfolio of AI workflows and agents deployed for real businesses. Each one saves time, cuts costs, or eliminates manual work entirely.</p>
+  </div>
+</div>
+
+<div class="filters-bar">
+  <div class="filters-inner">
+    <span class="filter-label">Filter by:</span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="sales">Sales</button>
+    <button class="filter-btn" data-filter="finance">Finance</button>
+    <button class="filter-btn" data-filter="ops">Operations</button>
+    <button class="filter-btn" data-filter="support">Support</button>
+    <button class="filter-btn" data-filter="hr">HR</button>
+    <button class="filter-btn" data-filter="growth">Growth</button>
+    <button class="filter-btn" data-filter="marketing">Marketing</button>
+    <button class="filter-btn" data-filter="data">Data</button>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num" id="count-total">6</div>
+      <div class="stat-desc">Automations built</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">~340h</div>
+      <div class="stat-desc">Hours saved per month</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">€18k</div>
+      <div class="stat-desc">Estimated monthly savings</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">3</div>
+      <div class="stat-desc">Live automations</div>
+    </div>
+  </div>
+
+  <!-- USE CASE LIST -->
+  <div class="uc-list" id="uc-list">
+
+    <!-- ITEM 1 -->
+    <div class="uc-item" data-category="sales">
+      <div class="uc-row" onclick="toggleItem(this)">
+        <div class="uc-row-left">
+          <div class="uc-icon cat-sales">📥</div>
+          <div class="uc-meta">
+            <span class="uc-title">Inbound lead qualification &amp; auto-follow-up</span>
+            <span class="uc-subtitle">AI agent scores leads and sends personalised email sequences within minutes of form submission</span>
+          </div>
+        </div>
+        <div class="uc-row-right">
+          <div class="status-wrap"><div class="status-dot live"></div>Live</div>
+          <span class="badge badge-sales">Sales</span>
+          <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </div>
+      <div class="uc-panel">
+        <div class="uc-panel-inner">
+          <div class="uc-field full">
+            <label>Goal</label>
+            <p>Respond to every inbound lead within 2 minutes, qualify them based on ICP criteria, and trigger a personalised 3-step email sequence — all without human intervention.</p>
+          </div>
+          <div class="uc-field half">
+            <label>Tools &amp; APIs</label>
+            <div class="tool-tags">
+              <span class="tool-tag">HubSpot</span>
+              <span class="tool-tag">OpenAI GPT-4o</span>
+              <span class="tool-tag">Make.com</span>
+              <span class="tool-tag">Gmail API</span>
+              <span class="tool-tag">Notion</span>
+            </div>
+          </div>
+          <div class="uc-field half">
+            <label>Trigger</label>
+            <p>New form submission in HubSpot CRM</p>
+          </div>
+          <div class="uc-field half">
+            <label>FinOps</label>
+            <div class="finops-grid">
+              <div class="finops-item"><div class="finops-val">~€45/mo</div><div class="finops-lbl">Running cost</div></div>
+              <div class="finops-item"><div class="finops-val">€3,200/mo</div><div class="finops-lbl">Est. value saved</div></div>
+              <div class="finops-item"><div class="finops-val">71×</div><div class="finops-lbl">ROI</div></div>
+            </div>
+          </div>
+          <div class="uc-field full">
+            <label>Outcomes</label>
+            <ul class="outcome-list">
+              <li>Response time reduced from 4h avg to under 2 minutes</li>
+              <li>35% increase in qualified leads moving to next stage</li>
+              <li>Sales team saves 25h/month on manual outreach</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="uc-item" data-category="finance">
+      <div class="uc-row" onclick="toggleItem(this)">
+        <div class="uc-row-left">
+          <div class="uc-icon cat-finance">🧾</div>
+          <div class="uc-meta">
+            <span class="uc-title">Invoice extraction &amp; accounting sync</span>
+            <span class="uc-subtitle">Reads PDF invoices from email, extracts data, and posts entries to accounting software automatically</span>
+          </div>
+        </div>
+        <div class="uc-row-right">
+          <div class="status-wrap"><div class="status-dot live"></div>Live</div>
+          <span class="badge badge-finance">Finance</span>
+          <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </div>
+      <div class="uc-panel">
+        <div class="uc-panel-inner">
+          <div class="uc-field full">
+            <label>Goal</label>
+            <p>Eliminate manual invoice entry by automatically extracting key data (vendor, amount, date, VAT, line items) from PDF attachments in a monitored inbox and syncing to the accounting system.</p>
+          </div>
+          <div class="uc-field half">
+            <label>Tools &amp; APIs</label>
+            <div class="tool-tags">
+              <span class="tool-tag">Gmail API</span>
+              <span class="tool-tag">OpenAI GPT-4o Vision</span>
+              <span class="tool-tag">Make.com</span>
+              <span class="tool-tag">Pennylane API</span>
+              <span class="tool-tag">Google Drive</span>
+            </div>
+          </div>
+          <div class="uc-field half">
+            <label>Trigger</label>
+            <p>New email with PDF attachment received in accounting inbox</p>
+          </div>
+          <div class="uc-field half">
+            <label>FinOps</label>
+            <div class="finops-grid">
+              <div class="finops-item"><div class="finops-val">~€30/mo</div><div class="finops-lbl">Running cost</div></div>
+              <div class="finops-item"><div class="finops-val">€2,100/mo</div><div class="finops-lbl">Est. value saved</div></div>
+              <div class="finops-item"><div class="finops-val">70×</div><div class="finops-lbl">ROI</div></div>
+            </div>
+          </div>
+          <div class="uc-field full">
+            <label>Outcomes</label>
+            <ul class="outcome-list">
+              <li>~200 invoices/month processed with zero manual entry</li>
+              <li>Accounting team saves 40h/month on data entry</li>
+              <li>Error rate reduced from ~8% to under 0.5%</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="uc-item" data-category="ops">
+      <div class="uc-row" onclick="toggleItem(this)">
+        <div class="uc-row-left">
+          <div class="uc-icon cat-ops">📊</div>
+          <div class="uc-meta">
+            <span class="uc-title">Weekly performance report generator</span>
+            <span class="uc-subtitle">Pulls KPIs from multiple sources, generates a narrative summary, and delivers a formatted report every Monday</span>
+          </div>
+        </div>
+        <div class="uc-row-right">
+          <div class="status-wrap"><div class="status-dot live"></div>Live</div>
+          <span class="badge badge-ops">Operations</span>
+          <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </div>
+      <div class="uc-panel">
+        <div class="uc-panel-inner">
+          <div class="uc-field full">
+            <label>Goal</label>
+            <p>Every Monday at 7am, pull KPIs from GA4, HubSpot, Stripe, and a Google Sheet dashboard. Use GPT-4o to write a plain-English narrative summary with highlights and anomalies. Send formatted PDF report to leadership team via email and Slack.</p>
+          </div>
+          <div class="uc-field half">
+            <label>Tools &amp; APIs</label>
+            <div class="tool-tags">
+              <span class="tool-tag">Google Analytics API</span>
+              <span class="tool-tag">Stripe API</span>
+              <span class="tool-tag">HubSpot API</span>
+              <span class="tool-tag">OpenAI GPT-4o</span>
+              <span class="tool-tag">Make.com</span>
+              <span class="tool-tag">Slack API</span>
+              <span class="tool-tag">Google Sheets</span>
+            </div>
+          </div>
+          <div class="uc-field half">
+            <label>Trigger</label>
+            <p>Scheduled — every Monday at 07:00</p>
+          </div>
+          <div class="uc-field half">
+            <label>FinOps</label>
+            <div class="finops-grid">
+              <div class="finops-item"><div class="finops-val">~€20/mo</div><div class="finops-lbl">Running cost</div></div>
+              <div class="finops-item"><div class="finops-val">€1,800/mo</div><div class="finops-lbl">Est. value saved</div></div>
+              <div class="finops-item"><div class="finops-val">90×</div><div class="finops-lbl">ROI</div></div>
+            </div>
+          </div>
+          <div class="uc-field full">
+            <label>Outcomes</label>
+            <ul class="outcome-list">
+              <li>Operations manager saves 6h/week previously spent building reports</li>
+              <li>Report delivered 100% on time, every week — previously ~60% on time</li>
+              <li>Anomaly detection flagged 3 revenue drops before end-of-day review</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="uc-item" data-category="support">
+      <div class="uc-row" onclick="toggleItem(this)">
+        <div class="uc-row-left">
+          <div class="uc-icon cat-support">💬</div>
+          <div class="uc-meta">
+            <span class="uc-title">Tier-1 customer support AI agent</span>
+            <span class="uc-subtitle">Handles FAQ, order status, and account queries autonomously — escalates only when needed</span>
+          </div>
+        </div>
+        <div class="uc-row-right">
+          <div class="status-wrap"><div class="status-dot dev"></div>In dev</div>
+          <span class="badge badge-support">Support</span>
+          <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </div>
+      <div class="uc-panel">
+        <div class="uc-panel-inner">
+          <div class="uc-field full">
+            <label>Goal</label>
+            <p>Deploy a GPT-4o powered support agent on the client's website chat and email. Agent handles tier-1 queries (tracking, refunds, FAQs, account changes) autonomously, updates CRM on every interaction, and escalates to human with full context only when needed.</p>
+          </div>
+          <div class="uc-field half">
+            <label>Tools &amp; APIs</label>
+            <div class="tool-tags">
+              <span class="tool-tag">OpenAI Assistants API</span>
+              <span class="tool-tag">Intercom</span>
+              <span class="tool-tag">HubSpot CRM</span>
+              <span class="tool-tag">Shopify API</span>
+              <span class="tool-tag">Make.com</span>
+              <span class="tool-tag">Notion (KB)</span>
+            </div>
+          </div>
+          <div class="uc-field half">
+            <label>Trigger</label>
+            <p>New inbound message in Intercom chat or support inbox</p>
+          </div>
+          <div class="uc-field half">
+            <label>FinOps</label>
+            <div class="finops-grid">
+              <div class="finops-item"><div class="finops-val">~€120/mo</div><div class="finops-lbl">Running cost</div></div>
+              <div class="finops-item"><div class="finops-val">€6,500/mo</div><div class="finops-lbl">Est. value saved</div></div>
+              <div class="finops-item"><div class="finops-val">54×</div><div class="finops-lbl">ROI</div></div>
+            </div>
+          </div>
+          <div class="uc-field full">
+            <label>Expected outcomes</label>
+            <ul class="outcome-list">
+              <li>70% of support tickets resolved without human involvement</li>
+              <li>Average response time from 4h to under 30 seconds</li>
+              <li>Support team refocused on complex, high-value cases</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 5 -->
+    <div class="uc-item" data-category="hr">
+      <div class="uc-row" onclick="toggleItem(this)">
+        <div class="uc-row-left">
+          <div class="uc-icon cat-hr">🔁</div>
+          <div class="uc-meta">
+            <span class="uc-title">Employee onboarding workflow automation</span>
+            <span class="uc-subtitle">Triggers contract creation, tool provisioning, Slack setup, and task checklists on new hire confirmation</span>
+          </div>
+        </div>
+        <div class="uc-row-right">
+          <div class="status-wrap"><div class="status-dot concept"></div>Concept</div>
+          <span class="badge badge-hr">HR</span>
+          <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </div>
+      <div class="uc-panel">
+        <div class="uc-panel-inner">
+          <div class="uc-field full">
+            <label>Goal</label>
+            <p>When a new hire is confirmed in the ATS, automatically trigger: DocuSign contract, IT tool provisioning requests, Slack channel creation, Notion onboarding page from template, and a 30-day task checklist for the manager — all in under 5 minutes.</p>
+          </div>
+          <div class="uc-field half">
+            <label>Tools &amp; APIs</label>
+            <div class="tool-tags">
+              <span class="tool-tag">Lever ATS</span>
+              <span class="tool-tag">DocuSign API</span>
+              <span class="tool-tag">Slack API</span>
+              <span class="tool-tag">Notion API</span>
+              <span class="tool-tag">Google Workspace</span>
+              <span class="tool-tag">Make.com</span>
+            </div>
+          </div>
+          <div class="uc-field half">
+            <label>Trigger</label>
+            <p>Candidate status changed to "Offer Accepted" in Lever ATS</p>
+          </div>
+          <div class="uc-field half">
+            <label>FinOps</label>
+            <div class="finops-grid">
+              <div class="finops-item"><div class="finops-val">~€25/mo</div><div class="finops-lbl">Running cost</div></div>
+              <div class="finops-item"><div class="finops-val">€1,400/mo</div><div class="finops-lbl">Est. value saved</div></div>
+              <div class="finops-item"><div class="finops-val">56×</div><div class="finops-lbl">ROI</div></div>
+            </div>
+          </div>
+          <div class="uc-field full">
+            <label>Expected outcomes</label>
+            <ul class="outcome-list">
+              <li>HR admin time per hire reduced from ~5h to under 10 minutes</li>
+              <li>Zero missed tool provisioning steps</li>
+              <li>New hire Day 1 experience standardised across the company</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 6 -->
+    <div class="uc-item" data-category="growth">
+      <div class="uc-row" onclick="toggleItem(this)">
+        <div class="uc-row-left">
+          <div class="uc-icon cat-growth">📡</div>
+          <div class="uc-meta">
+            <span class="uc-title">Prospect research &amp; enrichment agent</span>
+            <span class="uc-subtitle">Enriches a list of companies with firmographic data, LinkedIn info, and tech stack — ready for outbound</span>
+          </div>
+        </div>
+        <div class="uc-row-right">
+          <div class="status-wrap"><div class="status-dot dev"></div>In dev</div>
+          <span class="badge badge-growth">Growth</span>
+          <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </div>
+      <div class="uc-panel">
+        <div class="uc-panel-inner">
+          <div class="uc-field full">
+            <label>Goal</label>
+            <p>Takes a CSV of target companies, enriches each with headcount, industry, funding stage, tech stack (via BuiltWith), LinkedIn company URL, and a GPT-generated personalisation hook. Outputs an enriched CSV ready to import into the sales CRM for outbound sequencing.</p>
+          </div>
+          <div class="uc-field half">
+            <label>Tools &amp; APIs</label>
+            <div class="tool-tags">
+              <span class="tool-tag">OpenAI GPT-4o</span>
+              <span class="tool-tag">Clearbit API</span>
+              <span class="tool-tag">BuiltWith API</span>
+              <span class="tool-tag">LinkedIn (scrape)</span>
+              <span class="tool-tag">Make.com</span>
+              <span class="tool-tag">Google Sheets</span>
+            </div>
+          </div>
+          <div class="uc-field half">
+            <label>Trigger</label>
+            <p>Manual or scheduled — new CSV uploaded to Google Drive folder</p>
+          </div>
+          <div class="uc-field half">
+            <label>FinOps</label>
+            <div class="finops-grid">
+              <div class="finops-item"><div class="finops-val">~€60/mo</div><div class="finops-lbl">Running cost</div></div>
+              <div class="finops-item"><div class="finops-val">€2,800/mo</div><div class="finops-lbl">Est. value saved</div></div>
+              <div class="finops-item"><div class="finops-val">47×</div><div class="finops-lbl">ROI</div></div>
+            </div>
+          </div>
+          <div class="uc-field full">
+            <label>Expected outcomes</label>
+            <ul class="outcome-list">
+              <li>Research time per prospect reduced from 15min to ~8 seconds</li>
+              <li>BDR team can process 500 prospects/day vs ~30 manually</li>
+              <li>Personalisation quality scores 40% higher than manual research</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end uc-list -->
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <div>
+      <h2>Don't see your use case?</h2>
+      <p>We build custom automations for any business process. Book a free call and we'll scope it out together.</p>
+    </div>
+    <a href="index.html#contact" class="btn-green">Book a free audit →</a>
+  </div>
+
+</div><!-- end main -->
+
+<footer>
+  <a href="index.html" class="logo" style="font-size:1rem;">
+    <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+      <path d="M14 3C14 3 6 8 6 16C6 20.418 9.582 24 14 24C18.418 24 22 20.418 22 16C22 8 14 3 14 3Z" fill="#3ecf8e"/>
+      <path d="M14 10C14 10 10 13.5 10 17C10 19.209 11.791 21 14 21C16.209 21 18 19.209 18 17C18 13.5 14 10 14 10Z" fill="white" opacity="0.4"/>
+    </svg>
+    bloom
+  </a>
+  <p class="footer-copy">© 2025 Bloom. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleItem(rowEl) {
+    const item = rowEl.closest('.uc-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.uc-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Filter logic
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.uc-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      let count = 0;
+      items.forEach(item => {
+        const cat = item.dataset.category;
+        const show = filter === 'all' || cat === filter;
+        item.classList.toggle('hidden', !show);
+        if (show) count++;
+      });
+      document.getElementById('count-total').textContent = count;
+    });
+  });
+</script>
+</body>
+</html>
